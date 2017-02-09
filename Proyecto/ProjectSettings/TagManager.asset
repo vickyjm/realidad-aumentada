@@ -11,6 +11,9 @@ TagManager:
   - MegaHit
   - Controller
   - male0
+  - infoText
+  - cerebeloMark
+  - infoMark
   layers:
   - Default
   - TransparentFX
