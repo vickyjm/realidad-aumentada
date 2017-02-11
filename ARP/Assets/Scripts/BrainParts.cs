@@ -16,8 +16,8 @@ public class BrainParts : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+    }
 
     void OnMarkerTracked(ARMarker marker)
     {
@@ -37,7 +37,7 @@ public class BrainParts : MonoBehaviour {
 
     void OnMarkerLost(ARMarker marker)
     {
-        infoText.GetComponent<TextMesh>().text = "i";
+        //infoText.GetComponent<TextMesh>().text = "i";
         infoTitle.GetComponent<TextMesh>().text = "";
         Debug.Log(marker.name + " Se fue");
         //this.transform.position = this.transform.parent.parent.position;
