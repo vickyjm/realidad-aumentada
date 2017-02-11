@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/TEsto.unity
+- path: C:/Jmd/USB/Sep-Dic2017/realidad-aumentada/Proyecto/Assets/MainScene.unity
   isLoaded: 1
   isActive: 1
