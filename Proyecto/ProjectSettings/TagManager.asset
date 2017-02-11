@@ -14,6 +14,7 @@ TagManager:
   - infoText
   - cerebeloMark
   - infoMark
+  - frontalMark
   layers:
   - Default
   - TransparentFX
