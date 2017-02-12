@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class BrainParts : MonoBehaviour {
 
-    public GameObject infoText;
-    public GameObject infoTitle;
+    public GameObject infoText, infoTitle;
+    GameObject root, owner;
     // Use this for initialization
     void Start () {
-        infoText = GameObject.FindWithTag("infoText");
-        infoTitle = GameObject.FindWithTag("infoTitle");
         infoText.GetComponent<TextMesh>().text = "Coloca otra marca en la pantalla \npara ver informacion de las \ndistintas partes del cerebro!";
         infoTitle.GetComponent<TextMesh>().text = "Informacion";
+        root = this.transform.parent.gameObject;
+        owner = this.transform.GetChild(0).gameObject;
     }
 	
 	// Update is called once per frame
@@ -58,6 +58,22 @@ public class BrainParts : MonoBehaviour {
         infoText.GetComponent<TextMesh>().text = "Coloca otra marca en la pantalla \npara ver informacion de las \ndistintas partes del cerebro!";
         infoTitle.GetComponent<TextMesh>().text = "Informacion";
         Debug.Log(marker.name + " Se fue");
-        //this.transform.position = this.transform.parent.parent.position;
+        GameObject parte, parte_scene;
+        BoxCollider oldcollider;
+        for (int i = 0; i < owner.transform.childCount; i++)
+        {
+            parte = owner.transform.GetChild(i).gameObject;
+            parte_scene = root.transform.Find(parte.name + " Scene").gameObject;
+            //scene_container = parte_scene.transform.GetChild(0).gameObject;
+            parte.transform.SetParent(parte_scene.transform);
+            parte.transform.position = parte_scene.transform.position;
+            parte.transform.rotation = parte_scene.transform.parent.rotation;
+            parte.transform.localRotation = parte.transform.parent.rotation;
+            parte.transform.localEulerAngles = new Vector3(-180, 0, 0);
+            oldcollider = parte.GetComponent<BoxCollider>();
+            oldcollider.enabled = true;
+            parte.SetActive(false);
+
+        }
     }
 }
