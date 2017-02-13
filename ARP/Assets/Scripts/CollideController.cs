@@ -33,6 +33,8 @@ public class CollideController : MonoBehaviour
             diff = this.transform.parent.position - this.transform.position;
             diff.Normalize();
             holis = Vector3.Distance(this.transform.position, this.transform.parent.position);
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
             if (diff[0] <= snap && diff[1] < snap && diff[2] < snap)
             {
                 touched = false;
@@ -43,6 +45,7 @@ public class CollideController : MonoBehaviour
                     attachedToMe = this.transform.GetChild(i).gameObject;
                     attachedToMe.transform.SetParent(this.transform.parent);
                 }
+                
             }
             else
             {

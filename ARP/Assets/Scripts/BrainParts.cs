@@ -60,7 +60,8 @@ public class BrainParts : MonoBehaviour {
         Debug.Log(marker.name + " Se fue");
         GameObject parte, parte_scene;
         BoxCollider oldcollider;
-        for (int i = 0; i < owner.transform.childCount; i++)
+        int i = 0;
+        while (owner.transform.childCount!=0)
         {
             parte = owner.transform.GetChild(i).gameObject;
             parte_scene = root.transform.Find(parte.name + " Scene").gameObject;
