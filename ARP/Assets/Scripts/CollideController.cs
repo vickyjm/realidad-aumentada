@@ -40,9 +40,9 @@ public class CollideController : MonoBehaviour
                 touched = false;
                 this.transform.position = this.transform.parent.position;
                 this.transform.rotation = this.transform.parent.rotation;
-                for (int i = 0; i < this.transform.childCount; i++)
+                while(this.transform.childCount!=0)
                 {
-                    attachedToMe = this.transform.GetChild(i).gameObject;
+                    attachedToMe = this.transform.GetChild(0).gameObject;
                     attachedToMe.transform.SetParent(this.transform.parent);
                 }
                 
@@ -78,7 +78,7 @@ public class CollideController : MonoBehaviour
             //wrapper.AddComponent<BoxCollider>();
             //wrapper.transform.position = this.transform.position;
             boxwrap = this.GetComponent<BoxCollider>();
-            boxwrap.size = new Vector3(2.25f, 3.0f, 2.5f);
+            boxwrap.size = new Vector3(2.25f, 2.56f, 2.5f);
 
         }
         else

@@ -43,7 +43,7 @@ public class BrainParts : MonoBehaviour {
             else
             {
                 infoTitle.GetComponent<TextMesh>().text = "Frontal";
-                infoText.GetComponent<TextMesh>().text = "El lóbulo frontal se \nencarga de la producción \nlingüística y oral.";
+                infoText.GetComponent<TextMesh>().text = "El lóbulo frontal se \nencarga de la producción \nlingüística y oral. Define nuestra \norientación conductual y se \nrelaciona con la motivación";
             }
         }
         else if (marker.Tag == "occ")
